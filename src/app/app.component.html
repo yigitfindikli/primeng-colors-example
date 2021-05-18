@@ -1,0 +1,45 @@
+<div class="app">
+  <div class="topbar p-shadow-2 p-p-2">
+    <button
+      pButton
+      pRipple
+      type="button"
+      class="p-button-rounded"
+      (click)="visibleSidebar = true"
+      icon="pi pi-bars"
+    ></button>
+  </div>
+
+  <div class="content p-p-4">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-6">
+        <label for="firstname">Firstname</label>
+        <input id="firstname" [(ngModel)]="firstname" type="text" pInputText />
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="lastname">Lastname</label>
+        <input id="lastname" [(ngModel)]="lastname" type="text" pInputText />
+      </div>
+      <div class="p-field p-col-12">
+        <label for="address">Address</label>
+        <textarea
+          id="address"
+          style="resize: none"
+          type="text"
+          rows="4"
+          [(ngModel)]="address"
+          pInputTextarea
+        ></textarea>
+      </div>
+    </div>
+    <p-button label="Submit" (onClick)="submit()" icon="pi pi-check">
+    </p-button>
+  </div>
+
+  <p-sidebar [modal]="false" [closeOnEscape]="true" [(visible)]="visibleSidebar" [baseZIndex]="10000">
+    <h3 style="margin-top: 0;">
+      Sidebar Header
+    </h3>
+  </p-sidebar>
+  <p-toast></p-toast>
+</div>
